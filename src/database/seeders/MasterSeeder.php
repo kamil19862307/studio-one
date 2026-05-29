@@ -12,6 +12,6 @@ class MasterSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+
     }
 }
