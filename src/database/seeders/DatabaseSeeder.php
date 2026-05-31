@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 use App\Enums\Role;
+use App\Models\Category;
 use App\Models\Master;
+use App\Models\Service;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -22,6 +24,10 @@ class DatabaseSeeder extends Seeder
             ->create();
 
 //        Master::factory(10)->create();
+
+        Category::factory(10)->create();
+
+        Service::factory(30)->create();
 
         User::factory()->create([
             'name' => 'Administrator',
