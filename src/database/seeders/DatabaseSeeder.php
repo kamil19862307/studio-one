@@ -19,13 +19,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        $this->call([
+            CategorySeeder::class,
+        ]);
+
         User::factory(10)
             ->has(Master::factory())
             ->create();
 
 //        Master::factory(10)->create();
-
-        Category::factory(10)->create();
+//        Category::factory(10)->create();
 
         Service::factory(30)->create();
 
