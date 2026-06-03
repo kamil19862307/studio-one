@@ -27,10 +27,12 @@ class DatabaseSeeder extends Seeder
             ->has(Master::factory())
             ->create();
 
-//        Master::factory(10)->create();
-//        Category::factory(10)->create();
-
         Service::factory(30)->create();
+
+
+        $this->call([
+            PortfolioSeeder::class,
+        ]);
 
         User::factory()->create([
             'name' => 'Administrator',
