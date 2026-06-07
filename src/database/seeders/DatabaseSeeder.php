@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             PortfolioSeeder::class,
             ReviewSeeder::class,
+            MasterDayOffSeeder::class,
         ]);
 
         User::factory()->create([
