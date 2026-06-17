@@ -8,14 +8,14 @@
 
                 <div
                     v-for="(expert, i) in experts"
-                    :key="i"
+                    :key="expert.id"
                     class="bg-gray-50 rounded-2xl shadow hover:shadow-xl transition overflow-hidden"
                 >
-                    <img :src="expert.image" class="w-full h-64 object-cover" />
+                    <img :src="expert.photo" class="w-full h-64 object-cover" />
 
                     <div class="p-6 text-center">
                         <h3 class="text-xl font-semibold mb-2">{{ expert.name }}</h3>
-                        <p class="text-gray-600">{{ expert.text }}</p>
+                        <p class="text-gray-600">{{ expert.description }}</p>
                     </div>
                 </div>
 
@@ -34,21 +34,9 @@
 </template>
 
 <script setup>
-const experts = [
-    {
-        name: 'Jacob',
-        text: 'Lorem ipsum dolor sit amet, iscing elit, sed do magna',
-        image: '/images/blog1.jpg'
-    },
-    {
-        name: 'Lonut',
-        text: 'Lorem ipsum dolor sit amet, iscing elit, sed do magna',
-        image: '/images/blog2.jpg'
-    },
-    {
-        name: 'Irina',
-        text: 'Lorem ipsum dolor sit amet, iscing elit, sed do magna',
-        image: '/images/blog3.jpg'
-    }
-]
+
+defineProps({
+    experts: Array
+})
+
 </script>

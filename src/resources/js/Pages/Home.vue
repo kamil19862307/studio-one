@@ -7,7 +7,7 @@
         <WhatWeDo />
         <AboutUs />
         <Pricing />
-        <Experts />
+        <Experts :experts="experts" />
         <ContactForm />
         <Footer />
 
@@ -26,9 +26,10 @@ import Footer from "../Components/Footer.vue"
 
 import {Head} from '@inertiajs/vue3'
 
-// Принимаем данные из Laravel контроллера
+// Принимаем данные из контроллера
 defineProps({
     title: String,
+    experts: Array
 })
 </script>
 
