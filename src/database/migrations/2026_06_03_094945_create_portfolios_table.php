@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug');
             $table->foreignId('category_id')->constrained();
-            $table->foreignId('master_id')->nullable()->constrained();
+            $table->foreignId('master_id')->nullable()->constrained()->nullOnDelete();
             $table->string('image');
             $table->text('description');
 

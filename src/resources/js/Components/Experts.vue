@@ -11,7 +11,10 @@
                     :key="expert.id"
                     class="bg-gray-50 rounded-2xl shadow hover:shadow-xl transition overflow-hidden"
                 >
-                    <img :src="expert.photo" class="w-full h-64 object-cover" />
+                    <!-- Если фото нет, показываем заглушку -->
+                    <img :src="expert.photo_url || 'images/no_image.png'"
+                         :alt="expert.name"
+                         class="w-full h-64 object-cover" />
 
                     <div class="p-6 text-center">
                         <h3 class="text-xl font-semibold mb-2">{{ expert.name }}</h3>

@@ -22,7 +22,7 @@ class MasterFactory extends Factory
             'user_id' => User::factory(),
             'name' => $this->faker->name(),
             'slug' => $this->faker->slug(),
-            'photo' => $this->faker->word(),
+            'photo' => null,
             'experience' => $this->faker->randomDigit(),
             'description' => $this->faker->text(),
             'instagram' => $this->faker->word(),

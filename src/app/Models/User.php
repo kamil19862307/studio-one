@@ -33,6 +33,17 @@ class User extends Authenticatable
         ];
     }
 
+    protected static function booted()
+    {
+        // Deleting master and his photo to
+        static::deleting(function (User $user) {
+
+            if ($user->master()) {
+                $user->master()->delete();
+            }
+        });
+    }
+
     public function master(): HasOne
     {
         return $this->hasOne(Master::class);

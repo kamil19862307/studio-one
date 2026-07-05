@@ -16,8 +16,8 @@ class HomeController extends Controller
             'experts' => Master::query()
                 ->latest()
                 ->take(6)
-                ->select('masters.id', 'masters.name', 'masters.description', 'masters.photo', 'masters.experience')
-                ->get(),
+                ->get(['id', 'name', 'description', 'photo', 'experience'])
+                ->append('photo_url'),
         ]);
     }
 }
