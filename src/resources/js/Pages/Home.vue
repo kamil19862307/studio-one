@@ -3,7 +3,8 @@
 
     <MainLayout>
 
-        <HeroCarousel />
+<!--        Передаём данные в компоненты-->
+        <HeroCarousel :banners="banners"/>
         <WhatWeDo />
         <AboutUs />
         <Pricing />
@@ -29,7 +30,8 @@ import {Head} from '@inertiajs/vue3'
 // Принимаем данные из контроллера
 defineProps({
     title: String,
-    experts: Array
+    banners: Array,
+    experts: Array,
 })
 </script>
 

@@ -16,6 +16,10 @@ return new class extends Migration
 
             $table->string('title');
             $table->text('description')->nullable();
+            $table->string('image_path')->nullable();
+            $table->string('link_url')->nullable();
+            $table->integer('position')->default(1000);
+            $table->boolean('active')->default(true);
 
             $table->timestamps();
         });

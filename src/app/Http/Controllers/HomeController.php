@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
 use App\Models\Master;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -12,7 +13,14 @@ class HomeController extends Controller
     public function index(): Response
     {
         return Inertia::render('Home' , [
+
             'title' => 'Studio Number One',
+
+            'banners' => Banner::query()
+                ->where('active', 1)
+                ->orderBy('position', 'asc')
+                ->get(),
+
             'experts' => Master::query()
                 ->latest()
                 ->take(6)

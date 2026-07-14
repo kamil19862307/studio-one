@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
 
 
         $this->call([
+            BannerSeeder::class,
             PortfolioSeeder::class,
             ReviewSeeder::class,
             MasterDayOffSeeder::class,
