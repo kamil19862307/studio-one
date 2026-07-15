@@ -25,6 +25,7 @@ class BannerForm
                     ->label('Описание'),
                 FileUpload::make('image_path')
                     ->image()
+                    ->imageEditor()
                     ->directory('images/banners')
                     ->disk('public')
                     ->required()
